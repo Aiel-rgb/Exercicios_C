@@ -9,8 +9,11 @@ void ExibirLista(Aluno alunos[], int n);
 int main (){
 	int n;
 	printf("Qtd de alunos: \n");
-	scanf("%d", &n);
-	
+	if (scanf("%d", &n) != 1 || n <= 0) {
+		printf("Quantidade invalida.\n");
+		return 1;
+	}
+
 	Aluno alunos[n];
 	
 	Cadastro(alunos, n);
